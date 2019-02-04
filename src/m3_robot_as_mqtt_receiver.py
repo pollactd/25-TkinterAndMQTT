@@ -6,4 +6,3 @@ Using a Brickman (robot) as the receiver of messages.
 # but have the robot really do the action.
 # Implement just FORWARD at speeds X and Y is enough.
 
-

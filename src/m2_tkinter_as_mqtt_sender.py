@@ -34,12 +34,13 @@ def main():
     go_forward_button.grid()
     go_forward_button['command']=(lambda: blyat(entry_box,mqtt_client,entry_box2,entry_box3))
 
-
+    frame2=ttk.Frame(root,padding=10)
+    frame2.grid()
 
     entry_box=ttk.Entry(frame1)
     entry_box.grid()
 
-    entry_box2=ttk.Entry(frame1)
+    entry_box2=ttk.Entry(frame2)
     entry_box2.grid()
 
     entry_box3=ttk.Entry(frame1)
