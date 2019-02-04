@@ -32,7 +32,7 @@ def main():
 
     go_forward_button=ttk.Button(frame1,text='Forward')
     go_forward_button.grid()
-    go_forward_button['command']=(lambda: blyat(entry_box,mqtt_client,entry_box2,entry_box3))
+    go_forward_button['command']=(lambda: blyat(entry_box,mqtt_client,entry_box2))
 
     frame2=ttk.Frame(root,padding=10)
     frame2.grid()
@@ -43,22 +43,18 @@ def main():
     entry_box2=ttk.Entry(frame2)
     entry_box2.grid()
 
-    entry_box3=ttk.Entry(frame1)
-    entry_box3.grid()
-
 
     time.sleep(1)  # Time to allow the MQTT setup.
     print()
 
     root.mainloop()
 
-def blyat(entry_box,mqtt_client,entry_box2,entry_box3):
-    entry_box3=entry_box3.get()
+def blyat(entry_box,mqtt_client,entry_box2):
     entry_box=entry_box.get()
     entry_box2=entry_box2.get()
 
     s=entry_box
-    mqtt_client.send_message('forwardprint', [s,entry_box2,entry_box3])
+    mqtt_client.send_message('forwardprint', [s,entry_box2])
 
 
 
